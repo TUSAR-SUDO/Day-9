@@ -6,7 +6,7 @@ function App() {
   const [notes, setnotes] = useState([])
 
   function fetchNotes(){
-    axios.get("http://localhost:3000/api/notes")
+    axios.get("https://day-9-fh77.onrender.com/api/notes")
       .then((res) => {
         setnotes(res.data.notes)
       })
@@ -35,7 +35,7 @@ function App() {
   }
 
   function handleDeleteNote(noteId){
-    axios.delete("http://localhost:3000/api/notes/"+noteId)
+    axios.delete("https://day-9-fh77.onrender.com/api/notes/"+noteId)
     .then(res=>{
       console.log(res.data)
       fetchNotes()
